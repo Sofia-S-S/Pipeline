@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>FreeTuition</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>HelloWorldServlet</servlet-name>
+    <servlet-class>com.freetuition.controller.HelloWorldServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HelloWorldServlet</servlet-name>
+    <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>EmployeeLoginServlet</servlet-name>
+    <servlet-class>com.freetuition.controller.EmployeeLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeLoginServlet</servlet-name>
+    <url-pattern>/employee-login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployeeInfo</display-name>
+    <servlet-name>EmployeeInfo</servlet-name>
+    <servlet-class>com.freetuition.controller.EmployeeInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeInfo</servlet-name>
+    <url-pattern>/EmployeeInfo</url-pattern>
+  </servlet-mapping>
+</web-app>
