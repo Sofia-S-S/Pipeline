@@ -47,7 +47,7 @@ public class EmployeeInfoServlet extends HttpServlet {
         if(user !=null)   //On success, you can display a message to user on Home page
         {
          request.setAttribute("userid", user.getId()); // Store id in request scope.
-           request.getRequestDispatcher("employee-home-page.jsp").forward(request, response); // Forward to JSP page to display id in a HTML.
+           request.getRequestDispatcher("employee-home-page.html").forward(request, response); // Forward to JSP page to display id in a HTML.
 //    		response.getWriter().write("Your id is "+user.getId());
         }
 //        else   //On Failure, display a meaningful message to the User.

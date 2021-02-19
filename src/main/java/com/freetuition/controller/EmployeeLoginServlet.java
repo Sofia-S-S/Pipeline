@@ -1,13 +1,13 @@
 package com.freetuition.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.freetuition.dao.EmployeeDAOImpl;
 import com.freetuition.dao.LoginDAOImpl;
 import com.freetuition.exception.BusinessException;
@@ -64,10 +64,17 @@ public class EmployeeLoginServlet extends HttpServlet {
         	  Employee employee = daoE.getEmployeeById(123); // Obtain login info
               if(employee !=null)   //On success, you can display a message to user on Home page
               {
-               request.setAttribute("employeeId", user.getId()); // Store id in request scope.
-               request.setAttribute("name", employee.getFirstName());
-                 request.getRequestDispatcher("employee-home-page.jsp").forward(request, response); // Forward to JSP page to display id in a HTML.
-//          		response.getWriter().write("Your id is "+user.getId());
+            	  ObjectMapper map = new ObjectMapper();
+            	  final String JSON = map.writeValueAsString(employee);
+            	 response.setContentType("application/json");
+            	 response.getWriter().write(JSON);
+            	 
+//            	 for JSPs
+//               request.setAttribute("employeeId", user.getId()); // Store id in request scope.
+//               request.setAttribute("name", employee.getFirstName());
+            	 
+//                 request.getRequestDispatcher("employee-home-page.html").forward(request, response); // Forward to JSP page to display id in a HTML.
+       		
               }
 //         request.setAttribute("userid", user.getId()); // Store id in request scope.
 //           request.getRequestDispatcher("employee-home-page.jsp").forward(request, response); // Forward to JSP page to display id in a HTML.
