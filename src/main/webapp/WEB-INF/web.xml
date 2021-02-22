@@ -17,22 +17,37 @@
     <servlet-name>HelloWorldServlet</servlet-name>
     <url-pattern>/hello</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <servlet-name>EmployeeLoginServlet</servlet-name>
     <servlet-class>com.freetuition.controller.EmployeeLoginServlet</servlet-class>
   </servlet>
+  
   <servlet-mapping>
     <servlet-name>EmployeeLoginServlet</servlet-name>
     <url-pattern>/employee-login</url-pattern>
   </servlet-mapping>
+  
   <servlet>
-    <description></description>
     <display-name>EmployeeInfo</display-name>
     <servlet-name>EmployeeInfo</servlet-name>
     <servlet-class>com.freetuition.controller.EmployeeInfo</servlet-class>
   </servlet>
+  
   <servlet-mapping>
     <servlet-name>EmployeeInfo</servlet-name>
     <url-pattern>/EmployeeInfo</url-pattern>
   </servlet-mapping>
+  
+    <servlet>
+    <display-name>UpdateInfo</display-name>
+    <servlet-name>UpdateInfo</servlet-name>
+    <servlet-class>com.freetuition.controller.UpdateInfoServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>UpdateInfo</servlet-name>
+    <url-pattern>/update-info</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
